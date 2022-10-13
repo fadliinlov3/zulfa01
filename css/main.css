@@ -1,0 +1,1107 @@
+@font-face {
+  font-family: "Roboto-Reguler";
+  src: url(../font/Roboto-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url(../font/Roboto-Bold.ttf) format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: white;
+  background-color: #191A19;
+  overflow-x: hidden;
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  color: white;
+  font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+  -webkit-animation: introload 1s ease-in-out;
+          animation: introload 1s ease-in-out;
+}
+.home .homeoverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to right, rgba(25, 26, 25, 0.7), rgba(25, 26, 25, 0.3));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.home .homeoverlay .homebox {
+  max-width: 1201px;
+  width: 85vw;
+  position: absolute;
+  margin: 0 10vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-top: 30vh;
+  opacity: 0;
+  -webkit-animation: opaload 1s ease-in 1s forwards;
+          animation: opaload 1s ease-in 1s forwards;
+}
+.home .homeoverlay .homebox h3 {
+  font-size: 2.5vw;
+  margin-bottom: -1.5vw;
+}
+.home .homeoverlay .homebox h1 {
+  font-size: 8vw;
+  margin-left: -5px;
+  margin-bottom: 16px;
+}
+.home .homeoverlay .homebox h1 span {
+  color: #18A13D;
+}
+.home .homeoverlay .homebox p {
+  font-size: 1.5vw;
+  margin-bottom: 10vh;
+}
+.home .homeoverlay .homebox p span {
+  color: #18A13D;
+}
+.home .homeoverlay .homebox a {
+  font-size: calc(1vw + 0.5em);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  padding: 0.5vw 1.5vw;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #18A13D;
+  transition: 0.2s ease-in-out;
+}
+.home .homeoverlay .homebox a:hover {
+  background-color: #20be4a;
+  transform: scale(1.05);
+}
+
+.navbar {
+  width: 100%;
+  background: linear-gradient(to bottom, rgb(25, 26, 25) 0%, rgba(12, 13, 12, 0.7679446779) 64%, rgba(0, 0, 0, 0)) 100%;
+  font-family: Roboto-Reguler, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0;
+  z-index: 99;
+}
+.navbar .nav {
+  width: 85vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6px;
+}
+.navbar .nav .logo a {
+  color: white;
+  font-size: calc(1vw + 0.5em);
+}
+.navbar .nav .logo a span {
+  color: #18A13D;
+}
+.navbar .nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar .nav .menu li {
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+}
+.navbar .nav .menu li a {
+  font-size: calc(1vw + 0.25em);
+  color: white;
+}
+.navbar .nav .menu li a:hover {
+  color: #18A13D;
+}
+.navbar .nav .hamburger {
+  width: 3.5vw;
+  height: 3.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.navbar .nav .hamburger .toggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.navbar .nav .hamburger span {
+  width: 100%;
+  height: 0.5vw;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+.navbar .nav .hamburger .toggle:checked ~ span:nth-child(3) {
+  opacity: 0;
+}
+.navbar .nav .hamburger .toggle:checked ~ span:nth-child(2) {
+  width: 4.3vw;
+  transform: rotate(45deg) translateX(0.9vw) translateY(1.3vw);
+}
+.navbar .nav .hamburger .toggle:checked ~ span:nth-child(4) {
+  width: 4.3vw;
+  transform: rotate(-45deg) translateX(0.8vw) translateY(-1.2vw);
+}
+.navbar .nav .dnone {
+  display: none;
+}
+.navbar .line {
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+.about {
+  width: 100%;
+  padding: 173px 0;
+}
+.about .aboutbox {
+  width: 69vw;
+  margin: auto;
+  display: flex;
+}
+.about .aboutbox img {
+  max-width: 270px;
+  max-height: 359px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.1s, transform 0.1s;
+  -webkit-animation: introload 1s ease-in-out;
+          animation: introload 1s ease-in-out;
+}
+.about .aboutbox img:hover {
+  box-shadow: 0px 0px 50px rgb(0, 0, 0);
+}
+.about .aboutbox .aboutinfo {
+  margin-left: 10vw;
+  font-family: Roboto-Reguler, Arial, Helvetica, sans-serif;
+}
+.about .aboutbox .aboutinfo .sectitle h4 {
+  font-size: 1.8vw;
+  margin-bottom: -0.5vw;
+  color: #18A13D;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-right: solid 3px #18A13D;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: animated-text 1s steps(10, end) 1s 1 normal both, animated-cursor 600ms steps(10, end) infinite;
+          animation: animated-text 1s steps(10, end) 1s 1 normal both, animated-cursor 600ms steps(10, end) infinite;
+}
+.about .aboutbox .aboutinfo .sectitle h2 {
+  font-size: 64px;
+  font-size: 4.6vw;
+}
+.about .aboutbox .aboutinfo .sectitle h2 span {
+  color: #18A13D;
+}
+.about .aboutbox .aboutinfo .sectitle .line {
+  width: 78px;
+  height: 3px;
+  background-color: #18A13D;
+  margin-bottom: 23px;
+}
+.about .aboutbox .aboutinfo p {
+  font-size: 1.1em;
+  font-weight: 400;
+  text-align: justify;
+  margin-bottom: 35px;
+}
+.about .aboutbox .aboutinfo .aboutsocial {
+  width: 113px;
+  height: 31px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 41px;
+}
+.about .aboutbox .aboutinfo .aboutsocial .ig {
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/instagram.png);
+  background-size: cover;
+  transition: 0.1s ease-in-out;
+}
+.about .aboutbox .aboutinfo .aboutsocial .ig:hover {
+  filter: drop-shadow(3px 3px 2px #18A13D);
+}
+.about .aboutbox .aboutinfo .aboutsocial .tw {
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/twitter.png);
+  background-size: cover;
+  transition: 0.1s ease-in-out;
+}
+.about .aboutbox .aboutinfo .aboutsocial .tw:hover {
+  filter: drop-shadow(3px 3px 2px #18A13D);
+}
+.about .aboutbox .aboutinfo .aboutsocial .yt {
+  width: 31px;
+  height: 31px;
+  background-image: url(../img/youtube.png);
+  background-size: cover;
+  transition: 0.1s ease-in-out;
+}
+.about .aboutbox .aboutinfo .aboutsocial .yt:hover {
+  filter: drop-shadow(3px 3px 2px #18A13D);
+}
+.about .aboutbox .aboutinfo .contactme {
+  color: white;
+  font-weight: 600;
+  padding: 6px 15px;
+  background-color: #18A13D;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+.about .aboutbox .aboutinfo .contactme:hover {
+  box-shadow: 3px 3px 5px #1daa43;
+}
+
+.quote {
+  width: 100%;
+  height: 340px;
+  background-image: url(../img/quoteBg.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+}
+.quote .quotebox {
+  width: 69vw;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.quote .quotebox h2 {
+  width: 60%;
+  font-size: 3vw;
+}
+.quote .quotebox h2 span:first-child {
+  color: #18A13D;
+}
+.quote .quotebox h2 span:last-child {
+  color: #18A13D;
+}
+
+.service {
+  width: 100%;
+  padding: 173px 0 50px;
+  font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+}
+.service .servicebox {
+  width: 69vw;
+  min-width: 69vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.service .servicebox .serviceinfo {
+  font-family: Roboto-Reguler, Arial, Helvetica, sans-serif;
+}
+.service .servicebox .serviceinfo .sectitle {
+  margin-bottom: 100px;
+}
+.service .servicebox .serviceinfo .sectitle h4 {
+  font-size: 1.8vw;
+  margin-bottom: -0.5vw;
+  color: #18A13D;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-right: solid 3px #18A13D;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: animated-cursor 600ms steps(10, end) infinite;
+          animation: animated-cursor 600ms steps(10, end) infinite;
+}
+.service .servicebox .serviceinfo .sectitle h2 {
+  font-size: 64px;
+  font-size: 4.6vw;
+}
+.service .servicebox .serviceinfo .sectitle h2 span {
+  color: #18A13D;
+}
+.service .servicebox .serviceinfo .sectitle .line {
+  width: 47px;
+  height: 3px;
+  background-color: #18A13D;
+  margin-bottom: 23px;
+}
+.service .servicebox .serviceinfo .seccard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s ease-in;
+}
+.service .servicebox .serviceinfo .seccard .servicecard {
+  width: 28%;
+  height: 335px;
+  padding: 34px;
+  text-align: center;
+  background-color: #191A19;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.service .servicebox .serviceinfo .seccard .servicecard:hover {
+  background-color: #1E201E;
+  box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.service .servicebox .serviceinfo .seccard .servicecard .cardicon {
+  max-width: 100px;
+  max-height: 100px;
+}
+.service .servicebox .serviceinfo .seccard .servicecard .cardtitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.service .servicebox .serviceinfo .seccard .servicecard .cardtitle h4 {
+  font-size: 1.8vw;
+}
+.service .servicebox .serviceinfo .seccard .servicecard .cardtitle p {
+  font-family: Roboto-Reguler, Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+}
+.service .servicebox .serviceinfo .seccard .servicecard .cardbotton {
+  color: white;
+  background-color: #18A13D;
+  padding: 7px 16px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+}
+.service .servicebox .serviceinfo .seccard .servicecard .cardbotton:hover {
+  transform: scale(1.02) translateZ(20px);
+  box-shadow: 3px 3px 5px #1daa43;
+}
+
+.work {
+  width: 100%;
+  padding: 173px 0 100px;
+  font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+}
+.work .workbox {
+  width: 69vw;
+  min-width: 69vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.work .workbox .sectitle {
+  margin-bottom: 100px;
+}
+.work .workbox .sectitle h4 {
+  font-size: 1.8vw;
+  margin-bottom: -0.5vw;
+  color: #18A13D;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-right: solid 3px #18A13D;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: animated-cursor 600ms steps(10, end) infinite;
+          animation: animated-cursor 600ms steps(10, end) infinite;
+}
+.work .workbox .sectitle h2 {
+  font-size: 64px;
+  font-size: 4.6vw;
+}
+.work .workbox .sectitle h2 span {
+  color: #18A13D;
+}
+.work .workbox .sectitle .line {
+  width: 47px;
+  height: 3px;
+  background-color: #18A13D;
+  margin-bottom: 23px;
+}
+.work .workbox .seccard {
+  width: 100%;
+}
+.work .workbox .seccard .workcard {
+  width: 100%;
+  height: 243.15px;
+  display: flex;
+  margin-bottom: 103px;
+}
+.work .workbox .seccard .workcard:hover {
+  background-color: #1E201E;
+  box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.work .workbox .seccard .workcard .imagecard {
+  width: 50%;
+  height: 100%;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.work .workbox .seccard .workcard .imagecard img {
+  height: 100%;
+}
+.work .workbox .seccard .workcard .cardinfo {
+  width: 50%;
+  padding: 25px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.work .workbox .seccard .workcard .cardinfo h4 {
+  font-size: 1.8vw;
+}
+.work .workbox .seccard .workcard .cardinfo .line {
+  width: 25%;
+  height: 3px;
+  background-color: #18A13D;
+}
+.work .workbox .seccard .workcard .cardinfo p {
+  font-family: Roboto-Reguler, Arial, Helvetica, sans-serif;
+}
+.work .workbox .seccard .workcard .cardinfo a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: bold;
+  padding: 6.45px 14px;
+  background-color: #18A13D;
+  border-radius: 10px;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+.work .workbox .seccard .workcard .cardinfo a:hover {
+  transform: scale(1.02) translateZ(20px);
+  box-shadow: 3px 3px 5px #1daa43;
+}
+
+.contact {
+  width: 100%;
+  padding: 173px 0;
+  font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+  background-image: url(../img/picture.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.contact .contactbox {
+  width: 69vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.contact .contactbox .seccontact {
+  width: 50%;
+}
+.contact .contactbox .seccontact .sectitle h4 {
+  font-size: 1.8vw;
+  margin-bottom: -0.5vw;
+  color: #18A13D;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-right: solid 3px #18A13D;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: animated-cursor 600ms steps(10, end) infinite;
+          animation: animated-cursor 600ms steps(10, end) infinite;
+}
+.contact .contactbox .seccontact .sectitle h2 {
+  font-size: 4.6vw;
+}
+.contact .contactbox .seccontact .sectitle h2 span {
+  color: #18A13D;
+}
+.contact .contactbox .seccontact .sectitle .line {
+  width: 135px;
+  height: 3px;
+  background-color: #18A13D;
+  margin-bottom: 23px;
+}
+.contact .contactbox .seccontact .secinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 235px;
+}
+.contact .contactbox .seccontact .secinfo .info {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.contact .contactbox .seccontact .secinfo .info .icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #18A13D;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contact .contactbox .seccontact .secinfo .info .icon:hover {
+  transform: scale(1.02) translateZ(20px);
+  box-shadow: 3px 3px 5px #1daa43;
+}
+.contact .contactbox .seccontact .secinfo .info .mail {
+  background-image: url(../img/mail.png);
+}
+.contact .contactbox .seccontact .secinfo .info .telp {
+  background-image: url(../img/telephone.png);
+}
+.contact .contactbox .seccontact .secinfo .info .location {
+  background-image: url(../img/location.png);
+}
+.contact .contactbox .seccontact .secinfo .info .iconinfo {
+  width: 60%;
+  font-size: 1.2em;
+  font-family: Roboto-Reguler, Arial, Helvetica, sans-serif;
+  color: white;
+  font-family: Roboto-Reguler, Arial, Helvetica, sans-serif;
+  margin-left: 32px;
+}
+.contact .contactbox .seccontact .secinfo .info .iconinfo:hover {
+  transform: scale(1.005);
+}
+.contact .contactbox .secform {
+  width: 40%;
+}
+.contact .contactbox .secform div {
+  position: relative;
+  margin-bottom: 25px;
+}
+.contact .contactbox .secform div input {
+  width: 100%;
+  height: 42px;
+  display: block;
+  padding: 10px 15px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(30, 31, 30, 0.7);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  outline: none;
+}
+.contact .contactbox .secform div input:focus {
+  outline: 1px solid #18A13D;
+}
+.contact .contactbox .secform div textarea {
+  width: 100%;
+  height: 170px;
+  padding: 10px 15px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(30, 31, 30, 0.7);
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+.contact .contactbox .secform div textarea:focus {
+  outline: 1px solid #18A13D;
+}
+.contact .contactbox .secform div input:focus ~ label,
+.contact .contactbox .secform div textarea:focus ~ label,
+.contact .contactbox .secform div input:valid ~ label,
+.contact .contactbox .secform div textarea:valid ~ label {
+  top: -18px;
+  font-size: 13px;
+  box-shadow: rgba(25, 26, 25, 0.48);
+}
+.contact .contactbox .secform div label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  font-weight: 100;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+.contact .contactbox .secform .button {
+  font-size: 1.1em;
+  font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+  background-color: #18A13D;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 7px 16px;
+}
+.contact .contactbox .secform .button:hover {
+  transform: scale(1.02) translateZ(20px);
+  box-shadow: 3px 3px 5px #1daa43;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+footer p {
+  font-family: Roboto-Reguler, Arial, Helvetica, sans-serif;
+  margin: 10px 0;
+}
+
+@media (max-width: 820px) {
+  .home {
+    background-position: top right;
+  }
+  .home .homeoverlay .homebox {
+    bottom: 0;
+    padding-bottom: 15vh;
+  }
+  .home .homeoverlay .homebox h3 {
+    font-size: 3.5vw;
+  }
+  .home .homeoverlay .homebox h1 {
+    font-size: 13vw;
+  }
+  .home .homeoverlay .homebox p {
+    font-size: 2.5vw;
+  }
+  .home .homeoverlay .homebox a {
+    font-size: calc(1.5vw + 0.25em);
+    padding: 1vw 2vw;
+  }
+  .navbar .nav .logo a {
+    font-size: calc(1vw + 0.8em);
+  }
+  .navbar .nav .menu {
+    position: absolute;
+    background-color: #18A13D;
+    background-size: cover;
+    height: 100vh;
+    width: 0vw;
+    top: 0px;
+    right: 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    transition: 0.3s ease-in-out;
+    z-index: -1;
+  }
+  .navbar .nav .menu li {
+    height: 24vh;
+    padding: 0;
+    width: 100%;
+  }
+  .navbar .nav .menu li a {
+    height: 100%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1vw + 0.5em);
+  }
+  .navbar .nav .menu li a:hover {
+    color: white;
+    background-color: #179137;
+  }
+  .navbar .nav .slide {
+    width: 50vw;
+  }
+  .navbar .nav .slide li a {
+    transition: 0.3s ease;
+    display: flex;
+  }
+  .navbar .nav .hamburger {
+    display: flex;
+  }
+  .about .aboutbox {
+    width: 80vw;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about .aboutbox img {
+    max-width: 350px;
+  }
+  .about .aboutbox .aboutinfo {
+    margin-left: 0;
+    margin-top: 55px;
+  }
+  .about .aboutbox .aboutinfo .sectitle h4 {
+    font-size: 3.5vw;
+  }
+  .about .aboutbox .aboutinfo .sectitle h2 {
+    font-size: 8.6vw;
+  }
+  .about .aboutbox .aboutinfo .sectitle .line {
+    width: 10vw;
+  }
+  .quote {
+    width: 100%;
+    height: 30vw;
+  }
+  .service .servicebox {
+    width: 80vw;
+  }
+  .service .servicebox .serviceinfo .sectitle h4 {
+    font-size: 3.5vw;
+  }
+  .service .servicebox .serviceinfo .sectitle h2 {
+    font-size: 8.6vw;
+  }
+  .service .servicebox .serviceinfo .sectitle .line {
+    width: 7vw;
+  }
+  .service .servicebox .serviceinfo .seccard {
+    display: flex;
+    flex-direction: column;
+  }
+  .service .servicebox .serviceinfo .seccard .servicecard {
+    width: 100%;
+    margin-bottom: 51px;
+  }
+  .service .servicebox .serviceinfo .seccard .servicecard .cardtitle h4 {
+    font-size: 3.5vw;
+  }
+  .work .workbox {
+    width: 80vw;
+  }
+  .work .workbox .sectitle h4 {
+    font-size: 3.5vw;
+  }
+  .work .workbox .sectitle h2 {
+    font-size: 8.6vw;
+  }
+  .work .workbox .sectitle .line {
+    width: 7vw;
+  }
+  .work .workbox .seccard {
+    width: 100%;
+  }
+  .work .workbox .seccard .workcard {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    flex-direction: column;
+  }
+  .work .workbox .seccard .workcard:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+  .work .workbox .seccard .workcard .imagecard {
+    width: 100%;
+  }
+  .work .workbox .seccard .workcard .imagecard img {
+    width: 100%;
+  }
+  .work .workbox .seccard .workcard .cardinfo {
+    padding: 17px 21px;
+    width: 100%;
+    max-width: none;
+  }
+  .work .workbox .seccard .workcard .cardinfo h4 {
+    font-size: 3.5vw;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  .work .workbox .seccard .workcard .cardinfo .line {
+    width: 18%;
+    margin-bottom: 10px;
+  }
+  .work .workbox .seccard .workcard .cardinfo p {
+    font-size: 100%;
+    margin-bottom: 20px;
+  }
+  .work .workbox .seccard .workcard .cardinfo a {
+    font-size: 0.9em;
+  }
+  .contact .contactbox {
+    width: 80vw;
+    flex-direction: column;
+  }
+  .contact .contactbox .seccontact {
+    width: 100%;
+  }
+  .contact .contactbox .seccontact .sectitle h4 {
+    font-size: 3.5vw;
+  }
+  .contact .contactbox .seccontact .sectitle h2 {
+    font-size: 8.6vw;
+  }
+  .contact .contactbox .seccontact .sectitle .line {
+    width: 18vw;
+  }
+  .contact .contactbox .seccontact .secinfo {
+    margin-bottom: 50px;
+  }
+  .contact .contactbox .seccontact .secinfo .info .iconinfo {
+    font-size: 1em;
+    width: 50%;
+  }
+  .contact .contactbox .secform {
+    width: 100%;
+  }
+  .contact .contactbox .secform div input {
+    height: 50px;
+  }
+  .contact .contactbox .secform div textarea {
+    height: 180px;
+  }
+  footer p {
+    font-size: 0.5em;
+  }
+}
+@media (min-width: 1500px) {
+  .home .homeoverlay .homebox {
+    max-width: 3000px;
+  }
+  .navbar .nav {
+    max-width: 3000px;
+    font-size: 1.8em;
+  }
+  .navbar .nav .menu li {
+    padding: 0 50px;
+  }
+  .about .aboutbox img {
+    max-width: 3350px;
+    max-height: 600px;
+  }
+  .about .aboutbox .aboutinfo .sectitle .line {
+    width: 220px;
+  }
+  .about .aboutbox .aboutinfo p {
+    font-size: 1.8em;
+  }
+  .about .aboutbox .aboutinfo .aboutsocial {
+    width: 186px;
+  }
+  .about .aboutbox .aboutinfo .aboutsocial .ig, .about .aboutbox .aboutinfo .aboutsocial .tw {
+    width: 40px;
+    height: 40px;
+  }
+  .about .aboutbox .aboutinfo .aboutsocial .yt {
+    width: 48px;
+    height: 48px;
+  }
+  .about .aboutbox .aboutinfo .contactme {
+    font-size: 1.8em;
+  }
+  .quote {
+    height: 560px;
+  }
+  .service .servicebox .serviceinfo .sectitle .line {
+    width: 80px;
+  }
+  .service .servicebox .serviceinfo .seccard .servicecard {
+    height: 560px;
+    padding: 68px;
+  }
+  .service .servicebox .serviceinfo .seccard .servicecard .cardicon {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .service .servicebox .serviceinfo .seccard .servicecard .cardtitle p {
+    font-size: 1.8em;
+  }
+  .service .servicebox .serviceinfo .seccard .servicecard .cardbotton {
+    font-size: 1.8em;
+  }
+  .work .workbox .sectitle .line {
+    width: 80px;
+  }
+  .work .workbox .seccard .workcard {
+    height: 425px;
+  }
+  .work .workbox .seccard .workcard .cardinfo p {
+    font-size: 1.8em;
+  }
+  .work .workbox .seccard .workcard .cardinfo a {
+    font-size: 1.8em;
+  }
+  .contact .contactbox .seccontact .sectitle .line {
+    width: 250px;
+  }
+  .contact .contactbox .seccontact .secinfo {
+    height: 425px;
+  }
+  .contact .contactbox .seccontact .secinfo .info {
+    height: 100px;
+  }
+  .contact .contactbox .seccontact .secinfo .info .icon {
+    width: 100px;
+    height: 100px;
+  }
+  .contact .contactbox .seccontact .secinfo .info .iconinfo {
+    font-size: 1.8em;
+    margin-left: 64px;
+  }
+  .contact .contactbox .secform div {
+    margin-bottom: 50px;
+  }
+  .contact .contactbox .secform div input {
+    height: 84px;
+    font-size: 1.5em;
+  }
+  .contact .contactbox .secform div input:focus {
+    outline: 2px solid #18A13D;
+  }
+  .contact .contactbox .secform div textarea {
+    height: 240px;
+    font-size: 1.5em;
+  }
+  .contact .contactbox .secform div textarea:focus {
+    outline: 2px solid #18A13D;
+  }
+  .contact .contactbox .secform div input:focus ~ label,
+.contact .contactbox .secform div textarea:focus ~ label,
+.contact .contactbox .secform div input:valid ~ label,
+.contact .contactbox .secform div textarea:valid ~ label {
+    top: -36px;
+    font-size: 1.5em;
+    box-shadow: rgba(25, 26, 25, 0.48);
+  }
+  .contact .contactbox .secform div label {
+    font-size: 2em;
+    top: 20px;
+    left: 30px;
+  }
+  .contact .contactbox .secform .buttonKirim {
+    font-size: 1.8em;
+  }
+}
+@media (max-width: 430px) {
+  .home .homeoverlay .homebox p {
+    font-size: 3vw;
+  }
+  .home .homeoverlay .homebox a {
+    font-size: calc(2vw + 0.25em);
+    padding: 1vw 2vw;
+  }
+  .service .servicebox .serviceinfo .seccard .servicecard .cardtitle h4 {
+    font-size: 1.3em;
+  }
+  .service .servicebox .serviceinfo .seccard .servicecard .cardtitle .cardbotton {
+    font-size: 0.7em;
+  }
+  .work .workbox .seccard .workcard .cardinfo h4 {
+    font-size: 1.1em;
+  }
+  .work .workbox .seccard .workcard .cardinfo p {
+    font-size: 90%;
+  }
+  .work .workbox .seccard .workcard .cardinfo a {
+    font-size: 0.8em;
+  }
+  .contact .contactbox .seccontact .secinfo .info .iconinfo {
+    font-size: 0.6em;
+    width: 50%;
+  }
+}
+/* cursor animations */
+@-webkit-keyframes animated-cursor {
+  from {
+    border-right-color: #18A13D;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes animated-cursor {
+  from {
+    border-right-color: #18A13D;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@-webkit-keyframes opaload {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes opaload {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes introload {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes introload {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@-webkit-keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=main.css.map */
